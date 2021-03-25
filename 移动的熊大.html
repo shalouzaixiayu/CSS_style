@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #ccc;
+    }
+
+    @keyframes move {
+      0% {
+        background-position: 0 0;
+
+      }
+
+      100% {
+        background-position: -1600px 0;
+      }
+    }
+
+    @keyframes move-center {
+      0% {}
+
+      100% {
+        transform: translate(800px, 0);
+      }
+    }
+
+    .animate {
+      height: 100px;
+      width: 200px;
+      margin: 200px 0;
+      background-image: url('./bear.png');
+      animation: move 1.6s steps(8) infinite, move-center 5s forwards;
+      transition: all .6s;
+    }
+    .animate:hover {
+      transform: scale(3);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="animate"></div>
+</body>
+
+</html>

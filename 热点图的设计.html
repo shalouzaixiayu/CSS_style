@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>热点图</title>
+  <style>
+    .hotmap {
+      height: 900px;
+      width: 1100px;
+      position: relative;
+      margin: 100px auto;
+      background-image: url('./chinaMap.png');
+      background-repeat: no-repeat;
+      background-size: 70%;
+    }
+
+    .city_bj {
+      position: absolute;
+      top: 225px;
+      left: 537px;
+    }
+
+    .city_gz {
+      /* 广州 */
+      position: absolute;
+      bottom: 355px;
+      left: 535px;
+    }
+
+    .city_tb {
+      /* 台北 */
+      position: absolute;
+      bottom: 400px;
+      left: 646px;
+    }
+
+    .city_bj .dot,
+    .city_tb .dot,
+    .city_gz .dot {
+      height: 8px;
+      width: 8px;
+      background-color: #009dfd;
+      border-radius: 50%;
+    }
+
+    @keyframes wave {
+      0% {}
+
+      50% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+      }
+
+      70% {
+        width: 50px;
+        height: 50px;
+        opacity: .8;
+      }
+
+      90% {
+        width: 70px;
+        height: 70px;
+        opacity: .4;
+      }
+
+      100% {
+        width: 8px;
+        height: 8px;
+        opacity: 0;
+      }
+    }
+
+    .city_bj div[class^="wave"],
+    .city_tb div[class^="wave"],
+    .city_gz div[class^="wave"] {
+      height: 8px;
+      width: 8px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 20px #009dfd;
+      border-radius: 50%;
+      animation: wave .8s linear infinite;
+    }
+
+    .city_bj div.wave2,
+    .city_bj div.wave3,
+    .city_tb div.wave2,
+    .city_tb div.wave3,
+    .city_gz div.wave2,
+    .city_gz div.wave3 {
+      animation-delay: .4s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hotmap">
+    <div class="city_bj">
+      <div class="dot"></div>
+      <div class="wave1"></div>
+      <div class="wave2"></div>
+      <div class="wave3"></div>
+    </div>
+    <div class="city_gz">
+      <div class="dot"></div>
+      <div class="wave1"></div>
+      <div class="wave2"></div>
+      <div class="wave3"></div>
+    </div>
+    <div class="city_tb">
+      <div class="dot"></div>
+      <div class="wave1"></div>
+      <div class="wave2"></div>
+      <div class="wave3"></div>
+    </div>
+  </div>
+</body>
+
+</html>
